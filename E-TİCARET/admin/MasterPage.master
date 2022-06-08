@@ -1,0 +1,124 @@
+<%@ Master Language="C#"  AutoEventWireup="true"  CodeFile="MasterPage.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta charset="utf8" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        .col-md-12 {
+            width: 100%;
+            height: 50px;
+            background-color: #192a56;
+            text-align: left;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        .col-lg-9 {
+            background-color: white;
+            margin: 10px 0 0 30px;
+        }
+
+        .col-lg-2 {
+            background-color: white;
+            margin: 70px 0 0 10px;
+            border-right:1px solid #c2c2c2;
+            border-bottom:1px solid #c2c2c2;
+        }
+
+            .col-lg-2 ul li {
+                list-style: none;
+            }
+
+            .col-lg-2 ul {
+                margin: 0;
+                padding: 0;
+            }
+
+                .col-lg-2 ul li a {
+                    text-decoration: none;
+                    color: black;
+                    padding: 10px;
+                    display: block;
+                    /*border-bottom: 1px solid #c2c2c2 ;*/
+                }
+
+        li:hover {
+            background-color: #54a0ff;
+            border-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="row">
+        <div class="col-md-12" style="padding:10px 0px 0 39px"> 
+            
+            <h4>
+            <font color="white"    ><b>YÖNETÝM PANELÝ</b> </font></h4>
+           <asp:Button ID="Button2" CssClass="btn btn-danger" style="float:right;margin:-40px 30px 10px 10px ;" runat="server" Text="Çýkýþ" OnClick="Button2_Click" />
+            <asp:Button ID="Button1" CssClass="btn btn-primary" OnClientClick="form1.target='_blank';" style="float:right; margin:-40px 0px;"  runat="server" Text="Anasayfa" OnClick="Button1_Click" />
+            
+        </div>
+        </div>
+
+    <div class="row">
+
+
+
+        <div class="col-lg-2">
+            <ul>
+                <li><a href="#"><b>Üye Takip Ýþlemleri</b></a></li>
+                <li><a href="üyelisteleme.aspx">Üye Listeleme</a></li>
+                <li><a href="üyelikiptal.aspx">Üyelik Ýptal</a></li>
+
+                <li><a href="#"><b>Sipariþ Takip Ýþlemleri</b></a></li>
+                <li><a href="sipariþliste.aspx">Sipariþ Listesi</a></li>
+                <li><a href="sipariþsonlandýrma.aspx">Sipariþ Sonlandýrma</a></li>
+
+
+                <li><a href="#"><b>Ürün Takip Ýþlemleri</b></a></li>
+                <li><a href="ürünekle.aspx">Ürün Ekleme</a></li>
+                <li><a href="ürüngüncelle.aspx">Ürün Güncelleme</a></li>
+                <li><a href="ürünsil.aspx">Ürün Silme</a></li>
+                <li><a href="kategori.aspx">Kategori Marka Ýþlemleri</a></li>
+                
+
+
+                <li><a href="#"><b>Stok Takip Ýþlemleri</b></a></li>
+                <li><a href="stokgiriþ.aspx">Stok Giriþi</a></li>
+                <li><a href="stokçýkýþ.aspx">Stok Çýkýþý</a></li>
+              
+            </ul>
+        </div>
+        <div class="col-lg-9">
+             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </div>
+
+
+    </div>
+    
+        
+    
+    </form>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
+    <script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

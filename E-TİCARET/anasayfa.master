@@ -1,0 +1,251 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="anasayfa.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Rok Yazılım</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="utf8" />
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+    <style>
+      
+
+ul {
+    list-style-type: none;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+}
+li {
+    font-size:14px;
+    float: left;
+}
+li a,li a:hover {
+  color: #747d8c;
+  text-decoration:none;
+}
+.siparis{
+    float:right;
+    font-size:14px;
+    margin:0px;
+    
+}
+.siparis,a{
+     color:#747d8c;
+}
+.sipariş,a:hover{
+    color:#747d8c;
+    text-decoration:none;
+}
+
+
+.btnara { 
+  margin: -5px -4px;
+  background-color: #12b1bc;
+  border: none;
+  color: white;
+  cursor:pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 0px 2px 2px 0px;
+
+}
+.girissepet{
+    float:right;
+}
+
+
+
+
+
+.girissepet ul {
+    list-style: none outside none;
+    margin-top:-6px
+ }
+
+.girissepet ul li { 
+   display: inline;
+   position: relative;
+   padding:0 15px 0 0;
+  
+   }
+
+.menu {
+	
+	background: #12b1bc; 
+	
+	width:100%;
+	
+}
+ 
+.menu ul {
+	
+	list-style:none;
+}
+ 
+ 
+.menu li {
+	
+	display:inline-block;
+}
+ 
+ 
+.menu li a {
+	
+	display:block;
+	padding:15px 30px;
+	font:15px thoma, arial;
+	color:#fff; 
+	text-decoration:none;
+	}
+ 
+.menu li a:hover {
+	
+	background:tomato;
+	transition-duration:0.5s;
+	-webkit-transition-duration:0.5s;
+	-moz-transition-duration:0.5s;
+	-ms-transition-duration:0.5s;
+	-o-transition-duration:0.5s;
+}
+ 
+ 
+ 
+ 
+.menu li ul {
+	
+	display:none;
+	position:absolute;
+	background:#8a8a8a;
+	width:180px;
+}
+ 
+ 
+.menu li:hover ul {
+	
+	display:block;
+}
+ 
+ 
+.menu li ul li {
+	
+	display:block;
+}
+
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="row" style="height:25px">
+            <div class="col-md-2" style="background-color:#dfe4ea"></div>
+            <div class="col-md-8" style="background-color:#dfe4ea">
+                <div class="siparis"><a href="siparis.aspx">Sipariş Takip</a></div>
+                <ul>
+                    <li><a href="#">Hakkımızda</a>&nbsp;|&nbsp;</li>
+                    <li><a href="iletisim.aspx">İletişim</a>&nbsp;|&nbsp;</li>
+                    <li><a href="#">Müşteri Hizmetleri 0539 850 30 88</a></li>
+                </ul>
+                
+            </div>
+            <div class="col-md-2" style="background-color: #dfe4ea"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <br /> <a href="anasayfa.aspx"><img src="image/logo11.png" style="width:200px" title="logo" alt="logo" /></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
+                <asp:TextBox ID="TextBox1" placeholder="Ara..."  runat="server" Height="35px" Width="511px"></asp:TextBox>
+                <asp:Button ID="Button1" class="btnara" runat="server" height="35px"  Width="40px"  Text="Ara"  />
+
+                <div id="hesap" runat="server" class="girissepet">
+
+                    <ul>
+                        <li>
+                           <a href="girisyap.aspx"><img src="image/avatar.png" style="height:25px;" title="Hesabım" alt="login" /><b>Giriş Yap</b><br /></a>
+                            
+                            <a href="uyeol.aspx "><font size="3px">veya üye ol</font></a> </li> 
+                        <li>
+                            <a href="sepet.aspx"><img src="image/basket.png" style="height:25px;"  title="Sepetim" alt="sepet" /><b>Sepetim</b></a></li>
+                    </ul>
+                </div>
+                <div id="hesap1" runat="server" class="girissepet">
+
+                    <ul>
+                        <li>
+                           <a href="#"><img src="image/avatar.png" style="height:25px;" title="Hesabım" alt="login" /><b><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label></b><br /></a>
+                            
+                            
+                        <li>
+                            <a href="sepet.aspx"><img src="image/basket.png" style="height:25px;"  title="Sepetim" alt="sepet" /><b>Sepetim</b></a></li>
+                            <asp:Button ID="Button2" CssClass="btn btn-danger"   runat="server" Text="Çıkış Yap" OnClick="Button2_Click" />
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <br />
+
+        <div class="row" style="background-color:#12b1bc ; height:47px;" >
+             <div class="col-md-2" ></div>
+            <div class="col-md-8" >
+                <div class="menu">
+                    <ul>
+                        <li><a href="anasayfa.aspx">ANASAYFA</a></li>
+                        <li><a href="#">MARKALAR</a></li>
+                        <li><a href="sacbakım.aspx">SAÇ BAKIMI ÜRÜNLERİ</a></li>
+                        <li><a href="#">KAMPANYALAR</a></li>
+                        <li><a href="#">FIRSAT ÜRÜNLERİ</a></li>
+                        
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md-2" ></div>
+           
+            
+        </div>
+        <br />
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="col-md-2"></div>
+        
+    </div>
+        
+ 
+       
+      
+        <footer style="">
+            <div class="row">
+               
+                <div class="col w-100">
+                    <center>  <img  src="image/alt.png" alt="Alternate Text" /></center> 
+                </div>
+
+               
+
+            </div>
+        </footer>
+    </form>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
